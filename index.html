@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Piotr Obara - Manual QA Engineer focused on payments, REST API testing and transaction diagnostics.">
+    <meta property="og:title" content="Piotr Obara - Manual QA Engineer">
+    <meta property="og:description" content="Payments, API testing, SQL, logs and transaction diagnostics.">
+    <meta property="og:type" content="website">
+    <title>Piotr Obara - Manual QA Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" data-reveal>
+        <a class="brand" href="#top" aria-label="Piotr Obara home">
+          <span class="brand-mark">PO</span>
+          <span>
+            <strong>Piotr Obara</strong>
+            <small data-i18n="brandRole">Manual QA Engineer</small>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#expertise" data-i18n="navExpertise">Expertise</a>
+          <a href="#cases" data-i18n="navCases">Cases</a>
+          <a href="#api" data-i18n="navApi">API Console</a>
+          <a href="#artifacts" data-i18n="navArtifacts">Artifacts</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </nav>
+        <div class="topbar-actions">
+          <div class="language-toggle" aria-label="Language switcher">
+            <button class="lang-button active" type="button" data-lang="en">EN</button>
+            <button class="lang-button" type="button" data-lang="pl">PL</button>
+          </div>
+          <a class="nav-cta" href="mailto:piotr.obara.97@gmail.com" data-i18n="navCta">Hire-ready contact</a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section-band">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow" data-i18n="heroEyebrow">Payment systems QA / REST API / transaction diagnostics</p>
+            <h1 data-i18n="heroTitle">Manual QA Engineer who tests the business path behind every transaction.</h1>
+            <p class="hero-lead" data-i18n="heroLead">
+              I help teams verify payment flows, backend services, API contracts and data consistency across logs, databases and product behavior.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button primary" data-cv-link href="/public/Piotr-Obara-CV-EN.pdf" download data-i18n="downloadCv">Download CV</a>
+              <a class="button secondary" href="https://www.linkedin.com/in/piotr-obara-aab063121/" target="_blank" rel="noreferrer" data-i18n="linkedinProfile">LinkedIn profile</a>
+              <a class="button ghost" href="#api" data-i18n="tryApi">Try QA API</a>
+            </div>
+            <dl class="signal-strip" aria-label="Career signals">
+              <div>
+                <dt data-i18n="signalDomainLabel">Domain</dt>
+                <dd data-i18n="signalDomain">Payments, e-commerce, banking</dd>
+              </div>
+              <div>
+                <dt data-i18n="signalStackLabel">Core stack</dt>
+                <dd data-i18n="signalStack">Postman, Jira, SQL, logs</dd>
+              </div>
+              <div>
+                <dt data-i18n="signalScopeLabel">Testing scope</dt>
+                <dd data-i18n="signalScope">API, E2E, regression, exploratory</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="control-room" aria-label="Quality control dashboard preview" data-reveal>
+            <div class="panel-header">
+              <span class="status-dot"></span>
+              <span>QA Control Room</span>
+              <strong data-i18n="releaseReadiness">Release readiness</strong>
+            </div>
+            <div class="status-grid">
+              <div class="metric">
+                <span data-i18n="apiChecks">API checks</span>
+                <strong>98%</strong>
+                <small data-i18n="apiChecksSmall">contract + business validation</small>
+              </div>
+              <div class="metric accent">
+                <span data-i18n="riskFocus">Risk focus</span>
+                <strong>3DS</strong>
+                <small data-i18n="riskFocusSmall">auth, reversal, refund</small>
+              </div>
+              <div class="metric">
+                <span data-i18n="defectPath">Defect path</span>
+                <strong>API -> logs -> DB</strong>
+                <small data-i18n="defectPathSmall">root cause oriented</small>
+              </div>
+            </div>
+            <div class="transaction-flow" aria-hidden="true">
+              <span>Request</span>
+              <i></i>
+              <span>Service</span>
+              <i></i>
+              <span>Logs</span>
+              <i></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="log-window">
+              <div><b>POST</b> /payments/authorize <em>201 Created</em></div>
+              <div><b>ASSERT</b> amount, currency, merchantId, authCode</div>
+              <div><b>TRACE</b> transaction_id matched in service logs</div>
+              <div><b>SQL</b> status = AUTHORIZED, risk_score = LOW</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-band profile-band" id="expertise">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow" data-i18n="expertiseEyebrow">What I bring to a QA team</p>
+            <h2 data-i18n="expertiseTitle">Manual testing with technical diagnosis, not just screen checking.</h2>
+          </div>
+          <div class="expertise-grid">
+            <article class="feature-card" data-reveal>
+              <span class="card-kicker">01</span>
+              <h3 data-i18n="expertise1Title">Payment flow understanding</h3>
+              <p data-i18n="expertise1Text">Card transactions, acquiring, money transfers, chargebacks, refunds, reversals, fraud monitoring and 3DS/MPI verification.</p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <span class="card-kicker">02</span>
+              <h3 data-i18n="expertise2Title">API-first testing</h3>
+              <p data-i18n="expertise2Text">REST API validation in Postman: request and response data, HTTP statuses, authorization, negative paths and regression scenarios.</p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <span class="card-kicker">03</span>
+              <h3 data-i18n="expertise3Title">Data-backed investigation</h3>
+              <p data-i18n="expertise3Text">Diagnostics across API, application logs and PostgreSQL to confirm whether product behavior matches business rules.</p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <span class="card-kicker">04</span>
+              <h3 data-i18n="expertise4Title">Production-aware mindset</h3>
+              <p data-i18n="expertise4Text">Second Line Support background helps me read incidents, communicate with technical and business teams, and protect critical workflows.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-band timeline-band">
+          <div class="section-heading narrow" data-reveal>
+            <p class="eyebrow" data-i18n="timelineEyebrow">Career trajectory</p>
+            <h2 data-i18n="timelineTitle">From technical support and banking systems to focused QA engineering.</h2>
+          </div>
+          <div class="timeline" data-reveal>
+            <article>
+              <time>11.2025 - now</time>
+              <h3 data-i18n="job1Title">Manual QA Engineer / Fenige S.A.</h3>
+              <p data-i18n="job1Text">Manual testing of Java/Spring backend systems and Angular web applications in payment and transaction processes.</p>
+            </article>
+            <article>
+              <time>04.2023 - 11.2025</time>
+              <h3 data-i18n="job2Title">Second Line Support Engineer / Fenige S.A.</h3>
+              <p data-i18n="job2Text">Technical analysis of payment systems, production and test environments, incidents, logs, API data and business inconsistencies.</p>
+            </article>
+            <article>
+              <time>2020 - 2023</time>
+              <h3 data-i18n="job3Title">IT and user support / PKO Bank Polski</h3>
+              <p data-i18n="job3Text">Technical incident handling, access issues, banking application support and collaboration with IT teams and vendors.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-band cases-band" id="cases">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow" data-i18n="casesEyebrow">Portfolio concept</p>
+            <h2 data-i18n="casesTitle">Case studies built around real QA thinking and safe synthetic data.</h2>
+          </div>
+          <div class="case-grid">
+            <article class="case-card" data-reveal>
+              <div class="case-topline">
+                <span>Case 01</span>
+                <strong data-i18n="case1Impact">High business impact</strong>
+              </div>
+              <h3 data-i18n="case1Title">Payment authorization regression</h3>
+              <p data-i18n="case1Text">API and backend checks for amount, currency, merchant configuration, authentication result and final transaction state.</p>
+              <ul>
+                <li data-i18n="case1Li1">Positive and negative Postman scenarios</li>
+                <li data-i18n="case1Li2">Database status verification</li>
+                <li data-i18n="case1Li3">Log correlation by transaction identifier</li>
+              </ul>
+              <button class="text-button" type="button" data-artifact="payment" data-i18n="openCase">Open case details</button>
+            </article>
+            <article class="case-card" data-reveal>
+              <div class="case-topline">
+                <span>Case 02</span>
+                <strong data-i18n="case2Impact">Risk based</strong>
+              </div>
+              <h3 data-i18n="case2Title">Refund and reversal validation</h3>
+              <p data-i18n="case2Text">Scenario coverage for partial refund, failed reversal, duplicate request prevention and correct customer-facing status.</p>
+              <ul>
+                <li data-i18n="case2Li1">Boundary and duplicate request testing</li>
+                <li data-i18n="case2Li2">Business rule checks</li>
+                <li data-i18n="case2Li3">Jira-ready defect evidence</li>
+              </ul>
+              <button class="text-button" type="button" data-artifact="refund" data-i18n="openCase">Open case details</button>
+            </article>
+            <article class="case-card" data-reveal>
+              <div class="case-topline">
+                <span>Case 03</span>
+                <strong data-i18n="case3Impact">Technical diagnosis</strong>
+              </div>
+              <h3 data-i18n="case3Title">Async status mismatch</h3>
+              <p data-i18n="case3Text">Microservice and RabbitMQ-oriented analysis when frontend state, API response and database record do not agree.</p>
+              <ul>
+                <li data-i18n="case3Li1">API -> logs -> DB investigation</li>
+                <li data-i18n="case3Li2">Async event consistency check</li>
+                <li data-i18n="case3Li3">Root cause hypothesis for developers</li>
+              </ul>
+              <button class="text-button" type="button" data-artifact="async" data-i18n="openCase">Open case details</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-band api-band" id="api">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow" data-i18n="apiEyebrow">Interactive recruiter endpoint</p>
+            <h2 data-i18n="apiTitle">Send a GET request and receive my QA profile as JSON.</h2>
+            <p data-i18n="apiIntro">A lightweight Postman-style console built into the portfolio. It turns the CV into structured, testable information.</p>
+          </div>
+          <div class="api-console" data-reveal>
+            <div class="request-bar">
+              <span class="method">GET</span>
+              <select id="endpointSelect" aria-label="API endpoint">
+                <option value="/api/profile">/api/profile</option>
+                <option value="/api/experience">/api/experience</option>
+                <option value="/api/skills">/api/skills</option>
+                <option value="/api/hire-me">/api/hire-me</option>
+              </select>
+              <button class="send-button" type="button" id="sendRequest" data-i18n="sendRequest">Send</button>
+            </div>
+            <div class="api-meta">
+              <span><b>Status</b> <em id="apiStatus">200 OK</em></span>
+              <span><b>Time</b> <em id="apiTime">42 ms</em></span>
+              <span><b>Format</b> <em>JSON</em></span>
+            </div>
+            <pre class="json-response"><code id="jsonResponse"></code></pre>
+          </div>
+          <div class="endpoint-cards" data-reveal>
+            <button type="button" data-endpoint="/api/profile">
+              <strong>/api/profile</strong>
+              <span data-i18n="endpointProfile">Summary, contact, domain focus and availability signal.</span>
+            </button>
+            <button type="button" data-endpoint="/api/experience">
+              <strong>/api/experience</strong>
+              <span data-i18n="endpointExperience">Timeline from banking support to payment QA engineering.</span>
+            </button>
+            <button type="button" data-endpoint="/api/skills">
+              <strong>/api/skills</strong>
+              <span data-i18n="endpointSkills">Testing methods, tools, diagnostics and API coverage.</span>
+            </button>
+            <button type="button" data-endpoint="/api/hire-me">
+              <strong>/api/hire-me</strong>
+              <span data-i18n="endpointHire">A concise hiring pitch written like a clean API response.</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="section-band artifacts-band" id="artifacts">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow" data-i18n="artifactsEyebrow">Recruiter and QA Lead evidence</p>
+            <h2 data-i18n="artifactsTitle">Selected work samples to add from your materials.</h2>
+          </div>
+          <div class="artifact-layout">
+            <div class="artifact-board" data-reveal>
+              <button class="artifact-tab active" type="button" data-tab="bug" data-i18n="tabBug">Bug report</button>
+              <button class="artifact-tab" type="button" data-tab="testcase" data-i18n="tabTestCase">Test case</button>
+              <button class="artifact-tab" type="button" data-tab="risk" data-i18n="tabRisk">Risk matrix</button>
+              <button class="artifact-tab" type="button" data-tab="postman" data-i18n="tabPostman">Postman check</button>
+            </div>
+            <div class="artifact-preview" data-reveal>
+              <article class="artifact-panel active" id="bug">
+                <p class="panel-label" data-i18n="syntheticSample">Synthetic sample</p>
+                <h3 data-i18n="bugTitle">Refund status remains PENDING after successful provider confirmation</h3>
+                <dl>
+                  <div><dt data-i18n="severity">Severity</dt><dd>High</dd></div>
+                  <div><dt data-i18n="environment">Environment</dt><dd>Test / API v2 / merchant sandbox</dd></div>
+                  <div><dt data-i18n="expected">Expected</dt><dd data-i18n="bugExpected">Refund status changes to COMPLETED and is visible in transaction history.</dd></div>
+                  <div><dt data-i18n="actual">Actual</dt><dd data-i18n="bugActual">API returns provider success but database status remains PENDING.</dd></div>
+                </dl>
+              </article>
+              <article class="artifact-panel" id="testcase">
+                <p class="panel-label" data-i18n="syntheticSample">Synthetic sample</p>
+                <h3 data-i18n="testCaseTitle">Card authorization with 3DS challenge and successful capture</h3>
+                <ol>
+                  <li data-i18n="testCase1">Create authorization request with valid merchant, amount and currency.</li>
+                  <li data-i18n="testCase2">Complete 3DS challenge with approved authentication result.</li>
+                  <li data-i18n="testCase3">Verify HTTP status, response body and transaction identifier.</li>
+                  <li data-i18n="testCase4">Confirm final state in PostgreSQL and transaction dashboard.</li>
+                </ol>
+              </article>
+              <article class="artifact-panel" id="risk">
+                <p class="panel-label" data-i18n="syntheticSample">Synthetic sample</p>
+                <h3 data-i18n="riskTitle">Payment regression risk matrix</h3>
+                <div class="risk-grid" aria-label="Risk matrix">
+                  <span data-i18n="riskHighHigh">High impact / high probability</span>
+                  <strong data-i18n="riskHighHighText">3DS timeout, duplicate refund, incorrect reversal status</strong>
+                  <span data-i18n="riskHighLow">High impact / low probability</span>
+                  <strong data-i18n="riskHighLowText">Currency mismatch, acquiring configuration error</strong>
+                  <span data-i18n="riskMedium">Medium impact</span>
+                  <strong data-i18n="riskMediumText">Frontend status delay, missing error translation</strong>
+                </div>
+              </article>
+              <article class="artifact-panel" id="postman">
+                <p class="panel-label" data-i18n="syntheticSample">Synthetic sample</p>
+                <h3 data-i18n="postmanTitle">Postman validation checklist</h3>
+                <pre><code>pm.test("transaction is authorized", () =&gt; {
+  pm.response.to.have.status(201);
+  pm.expect(json.status).to.eql("AUTHORIZED");
+  pm.expect(json.amount).to.eql(pm.environment.get("amount"));
+});</code></pre>
+              </article>
+            </div>
+          </div>
+          <div class="material-note" data-reveal>
+            <h3 data-i18n="materialsTitle">Best private materials to sanitize and add next</h3>
+            <p data-i18n="materialsText">One anonymized Jira defect, one Postman collection screenshot, one SQL/log investigation note, one regression checklist and one Confluence-style technical analysis. All with fake IDs, fake data and no client or production details.</p>
+          </div>
+        </section>
+
+        <section class="section-band stack-band">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow" data-i18n="stackEyebrow">Tools and methods</p>
+            <h2 data-i18n="stackTitle">A practical stack for modern manual QA.</h2>
+          </div>
+          <div class="stack-list" data-reveal>
+            <span>Manual testing</span>
+            <span>REST API</span>
+            <span>Postman</span>
+            <span>Swagger</span>
+            <span>SQL</span>
+            <span>PostgreSQL</span>
+            <span>Logs</span>
+            <span>Jira</span>
+            <span>Confluence</span>
+            <span>Metabase</span>
+            <span>pgAdmin</span>
+            <span>Jenkins / CI</span>
+            <span>Docker basics</span>
+            <span>Playwright basics</span>
+            <span>RabbitMQ basics</span>
+            <span>JSON / XML</span>
+          </div>
+        </section>
+
+        <section class="section-band contact-band" id="contact">
+          <div class="contact-content" data-reveal>
+            <p class="eyebrow" data-i18n="contactEyebrow">Available for QA opportunities</p>
+            <h2 data-i18n="contactTitle">Looking for a tester who understands both user impact and backend evidence?</h2>
+            <p data-i18n="contactText">I am ready to support teams building payment, transaction, banking and e-commerce products where quality depends on details hidden behind the UI.</p>
+            <div class="contact-actions">
+              <a class="button primary" href="mailto:piotr.obara.97@gmail.com">piotr.obara.97@gmail.com</a>
+              <a class="button secondary" href="tel:+48602363240">+48 602 363 240</a>
+              <a class="button ghost" href="https://www.linkedin.com/in/piotr-obara-aab063121/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="button ghost" data-cv-link href="/public/Piotr-Obara-CV-EN.pdf" download data-i18n="downloadCv">Download CV</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="modal" id="caseModal" aria-labelledby="modalTitle">
+      <div class="modal-panel">
+        <button class="modal-close" type="button" aria-label="Close case details" data-i18n="close">Close</button>
+        <p class="eyebrow" id="modalKicker">Case details</p>
+        <h2 id="modalTitle"></h2>
+        <div id="modalBody"></div>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
