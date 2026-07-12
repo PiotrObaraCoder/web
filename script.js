@@ -1,5 +1,5 @@
 const cvFiles = {
-  en: "/public/Piotr-Obara-CV-EN.pdf",
+  en: "/public/Piotr-Obara-CV-PL.pdf",
   pl: "/public/Piotr-Obara-CV-PL.pdf"
 };
 
@@ -43,12 +43,18 @@ const translations = {
     expertise4Text: "Second Line Support background helps me read incidents, communicate with technical and business teams, and protect critical workflows.",
     timelineEyebrow: "Career trajectory",
     timelineTitle: "From technical support and banking systems to focused QA engineering.",
-    job1Title: "Manual QA Engineer / Fenige S.A.",
-    job1Text: "Manual testing of Java/Spring backend systems and Angular web applications in payment and transaction processes.",
+    job1Time: "Jul 2024 - Present",
+    job1Title: "Manual QA Engineer (Manual Tester / Quality Assurance) / Fenige S.A.",
+    job1Text: "Full-time hybrid role in Lublin. Manual testing of Java/Spring backend systems and Angular web applications in payments and transaction processes since July 2024.",
+    job2Time: "Apr 2023 - Jul 2024",
     job2Title: "Second Line Support Engineer / Fenige S.A.",
-    job2Text: "Technical analysis of payment systems, production and test environments, incidents, logs, API data and business inconsistencies.",
-    job3Title: "IT and user support / PKO Bank Polski",
-    job3Text: "Technical incident handling, access issues, banking application support and collaboration with IT teams and vendors.",
+    job2Text: "On-site role in Lublin from April 2023 to July 2024. Technical analysis of payment systems, incidents, API data, logs, SQL records and business inconsistencies.",
+    job3Time: "Oct 2021 - Apr 2023",
+    job3Title: "Help Desk Support Specialist / PKO Bank Polski",
+    job3Text: "On-site role in Lublin from October 2021 to April 2023. Technical support, Active Directory, access requests and banking application incidents.",
+    job4Time: "Oct 2020 - Oct 2021",
+    job4Title: "Customer Service Specialist / PKO Bank Polski",
+    job4Text: "Hybrid role from October 2020 to October 2021. Customer service in banking processes and direct support for business users.",
     casesEyebrow: "Portfolio concept",
     casesTitle: "Case studies built around real QA thinking and safe synthetic data.",
     case1Impact: "High business impact",
@@ -92,11 +98,11 @@ const translations = {
     actual: "Actual",
     bugExpected: "Refund status changes to COMPLETED and is visible in transaction history.",
     bugActual: "API returns provider success but database status remains PENDING.",
-    testCaseTitle: "Card authorization with 3DS challenge and successful capture",
-    testCase1: "Create authorization request with valid merchant, amount and currency.",
-    testCase2: "Complete 3DS challenge with approved authentication result.",
-    testCase3: "Verify HTTP status, response body and transaction identifier.",
-    testCase4: "Confirm final state in PostgreSQL and transaction dashboard.",
+    testCaseTitle: "Refund API validation after successful payment transaction",
+    testCase1: "Prepare a paid transaction with valid merchant, amount, currency and transaction identifier.",
+    testCase2: "Send refund request in Postman and validate authorization, HTTP status and response schema.",
+    testCase3: "Verify refund amount, original transaction reference and business status in response body.",
+    testCase4: "Confirm final status in PostgreSQL, correlate logs by transaction ID and prepare Jira evidence if the status is inconsistent.",
     riskTitle: "Payment regression risk matrix",
     riskHighHigh: "High impact / high probability",
     riskHighHighText: "3DS timeout, duplicate refund, incorrect reversal status",
@@ -153,12 +159,18 @@ const translations = {
     expertise4Text: "Doświadczenie Second Line Support pomaga mi analizować incydenty, komunikować się z biznesem i chronić krytyczne procesy.",
     timelineEyebrow: "Ścieżka kariery",
     timelineTitle: "Od wsparcia technicznego i systemów bankowych do świadomego QA engineeringu.",
-    job1Title: "Manual QA Engineer / Fenige S.A.",
-    job1Text: "Manualne testowanie backendów Java/Spring i aplikacji Angular w obszarze płatności oraz procesów transakcyjnych.",
+    job1Time: "Lip 2024 - obecnie",
+    job1Title: "Manual QA Engineer (Manual Tester / Quality Assurance) / Fenige S.A.",
+    job1Text: "Pełnoetatowa rola hybrydowa w Lublinie. Manualne testowanie backendów Java/Spring i aplikacji Angular w obszarze płatności oraz procesów transakcyjnych od lipca 2024.",
+    job2Time: "Kwi 2023 - Lip 2024",
     job2Title: "Second Line Support Engineer / Fenige S.A.",
-    job2Text: "Analiza techniczna systemów płatniczych, środowisk produkcyjnych i testowych, incydentów, logów, API oraz danych biznesowych.",
-    job3Title: "Wsparcie IT i użytkowników / PKO Bank Polski",
-    job3Text: "Obsługa incydentów technicznych, uprawnień, aplikacji bankowych i współpraca z zespołami IT oraz dostawcami.",
+    job2Text: "Rola stacjonarna w Lublinie od kwietnia 2023 do lipca 2024. Analiza systemów płatniczych, incydentów, API, logów, SQL i niespójności biznesowych.",
+    job3Time: "Paź 2021 - Kwi 2023",
+    job3Title: "Help Desk Support Specialist / PKO Bank Polski",
+    job3Text: "Rola stacjonarna w Lublinie od października 2021 do kwietnia 2023. Wsparcie techniczne, Active Directory, uprawnienia i incydenty aplikacji bankowych.",
+    job4Time: "Paź 2020 - Paź 2021",
+    job4Title: "Customer Service Specialist / PKO Bank Polski",
+    job4Text: "Rola hybrydowa od października 2020 do października 2021. Obsługa klienta w procesach bankowych i bezpośrednie wsparcie użytkowników biznesowych.",
     casesEyebrow: "Koncepcja portfolio",
     casesTitle: "Case studies oparte o realne myślenie QA i bezpieczne dane syntetyczne.",
     case1Impact: "Wysoki wpływ biznesowy",
@@ -202,11 +214,11 @@ const translations = {
     actual: "Rzeczywiste",
     bugExpected: "Status refundu zmienia się na COMPLETED i jest widoczny w historii transakcji.",
     bugActual: "API zwraca sukces providera, ale status w bazie pozostaje PENDING.",
-    testCaseTitle: "Autoryzacja karty z 3DS challenge i poprawnym capture",
-    testCase1: "Utwórz request autoryzacji z poprawnym merchantem, kwotą i walutą.",
-    testCase2: "Zakończ 3DS challenge z zaakceptowanym wynikiem autoryzacji.",
-    testCase3: "Zweryfikuj status HTTP, body response i identyfikator transakcji.",
-    testCase4: "Potwierdź finalny status w PostgreSQL i panelu transakcyjnym.",
+    testCaseTitle: "Walidacja API refundu po poprawnej transakcji płatniczej",
+    testCase1: "Przygotuj opłaconą transakcję z poprawnym merchantem, kwotą, walutą i identyfikatorem transakcji.",
+    testCase2: "Wyślij request refundu w Postmanie i zweryfikuj autoryzację, status HTTP oraz schemat response.",
+    testCase3: "Sprawdź kwotę refundu, referencję do transakcji źródłowej i status biznesowy w body response.",
+    testCase4: "Potwierdź finalny status w PostgreSQL, skoreluj logi po transaction ID i przygotuj dowody do Jira, jeśli status jest niespójny.",
     riskTitle: "Macierz ryzyka regresji płatności",
     riskHighHigh: "Wysoki wpływ / wysokie prawdopodobieństwo",
     riskHighHighText: "Timeout 3DS, duplikat refundu, błędny status reversala",
@@ -317,33 +329,50 @@ const apiResponses = {
       candidate: "Piotr Obara",
       role: "Manual QA Engineer / Manual Tester",
       domain_focus: ["payment systems", "transactional processes", "e-commerce", "banking applications"],
-      summary: "Manual QA Engineer focused on REST API testing, payment flow verification and issue diagnosis across API, logs and PostgreSQL.",
+      summary: "Manual QA Engineer focused on REST API testing, payment flow verification, test data preparation and issue diagnosis across API, logs and PostgreSQL.",
       contact: {
         email: "piotr.obara.97@gmail.com",
         phone: "+48 602 363 240",
         linkedin: "linkedin.com/in/piotr-obara-aab063121"
       },
-      cv: "Piotr-Obara-CV-EN.pdf"
+      cv: "Piotr-Obara-CV-PL.pdf"
     },
     "/api/experience": {
       current: {
         company: "Fenige S.A.",
-        role: "Manual QA Engineer / Manual Tester",
-        since: "2025-11",
-        focus: ["Java/Spring backend systems", "Angular web applications", "payments", "transactional processes"]
+        employment: "Full-time",
+        location: "Lublin, Lubelskie, Poland",
+        role: "Manual QA Engineer (Manual Tester / Quality Assurance)",
+        period: "2024-07 - Present",
+        work_mode: "Hybrid",
+        focus: ["Java/Spring backend systems", "Angular web applications", "payments", "transactional processes", "REST API testing"]
       },
       previous: [
         {
           company: "Fenige S.A.",
           role: "Second Line Support Engineer",
-          period: "2023-04 - 2025-11",
+          period: "2023-04 - 2024-07",
+          work_mode: "On-site",
           value: "Production-aware diagnosis based on API responses, logs, database records and business context."
         },
         {
           company: "PKO Bank Polski",
-          role: "IT User Support Specialist",
-          period: "2021 - 2023",
-          value: "Technical ticket handling, banking application support and cooperation with IT teams."
+          employment: "Full-time",
+          location: "Lublin, Lubelskie, Poland",
+          roles: [
+            {
+              role: "Help Desk Support Specialist",
+              period: "2021-10 - 2023-04",
+              work_mode: "On-site",
+              value: "Technical ticket handling, Active Directory, access requests and banking application incidents."
+            },
+            {
+              role: "Customer Service Specialist",
+              period: "2020-10 - 2021-10",
+              work_mode: "Hybrid",
+              value: "Customer service in banking processes and direct business user support."
+            }
+          ]
         }
       ]
     },
@@ -371,7 +400,7 @@ const apiResponses = {
       kandydat: "Piotr Obara",
       rola: "Tester Manualny / Manual QA Engineer",
       specjalizacja: ["systemy płatnicze", "procesy transakcyjne", "e-commerce", "aplikacje bankowe"],
-      podsumowanie: "Tester manualny skupiony na REST API, weryfikacji flow płatności i diagnostyce problemów na ścieżce API, logi, PostgreSQL.",
+      podsumowanie: "Tester manualny skupiony na REST API, weryfikacji flow płatności, przygotowywaniu danych testowych i diagnostyce problemów na ścieżce API, logi, PostgreSQL.",
       kontakt: {
         email: "piotr.obara.97@gmail.com",
         telefon: "+48 602 363 240",
@@ -382,22 +411,39 @@ const apiResponses = {
     "/api/experience": {
       aktualnie: {
         firma: "Fenige S.A.",
-        rola: "Manual QA Engineer / Tester Manualny",
-        od: "2025-11",
-        obszar: ["backend Java/Spring", "aplikacje Angular", "płatności", "procesy transakcyjne"]
+        zatrudnienie: "Pełny etat",
+        lokalizacja: "Lublin, Lubelskie, Polska",
+        rola: "Manual QA Engineer (Manual Tester / Quality Assurance)",
+        okres: "2024-07 - obecnie",
+        tryb: "Hybrydowo",
+        obszar: ["backend Java/Spring", "aplikacje Angular", "płatności", "procesy transakcyjne", "testowanie REST API"]
       },
       poprzednio: [
         {
           firma: "Fenige S.A.",
           rola: "Second Line Support Engineer",
-          okres: "2023-04 - 2025-11",
+          okres: "2023-04 - 2024-07",
+          tryb: "Stacjonarnie",
           wartosc: "Diagnoza problemów produkcyjno-testowych na podstawie API, logów, bazy danych i kontekstu biznesowego."
         },
         {
           firma: "PKO Bank Polski",
-          rola: "Specjalista wsparcia użytkownika IT",
-          okres: "2021 - 2023",
-          wartosc: "Obsługa zgłoszeń technicznych, aplikacji bankowych i współpraca z zespołami IT."
+          zatrudnienie: "Pełny etat",
+          lokalizacja: "Lublin, Lubelskie, Polska",
+          role: [
+            {
+              rola: "Help Desk Support Specialist",
+              okres: "2021-10 - 2023-04",
+              tryb: "Stacjonarnie",
+              wartosc: "Obsługa zgłoszeń technicznych, Active Directory, uprawnień i incydentów aplikacji bankowych."
+            },
+            {
+              rola: "Customer Service Specialist",
+              okres: "2020-10 - 2021-10",
+              tryb: "Hybrydowo",
+              wartosc: "Obsługa klienta w procesach bankowych i bezpośrednie wsparcie użytkowników biznesowych."
+            }
+          ]
         }
       ]
     },

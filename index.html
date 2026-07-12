@@ -49,7 +49,7 @@
               I help teams verify payment flows, backend services, API contracts and data consistency across logs, databases and product behavior.
             </p>
             <div class="hero-actions" aria-label="Primary actions">
-              <a class="button primary" data-cv-link href="/public/Piotr-Obara-CV-EN.pdf" download data-i18n="downloadCv">Download CV</a>
+              <a class="button primary" data-cv-link href="/public/Piotr-Obara-CV-PL.pdf" download data-i18n="downloadCv">Download CV</a>
               <a class="button secondary" href="https://www.linkedin.com/in/piotr-obara-aab063121/" target="_blank" rel="noreferrer" data-i18n="linkedinProfile">LinkedIn profile</a>
               <a class="button ghost" href="#api" data-i18n="tryApi">Try QA API</a>
             </div>
@@ -146,19 +146,24 @@
           </div>
           <div class="timeline" data-reveal>
             <article>
-              <time>11.2025 - now</time>
+              <time data-i18n="job1Time">Jul 2024 - Present</time>
               <h3 data-i18n="job1Title">Manual QA Engineer / Fenige S.A.</h3>
               <p data-i18n="job1Text">Manual testing of Java/Spring backend systems and Angular web applications in payment and transaction processes.</p>
             </article>
             <article>
-              <time>04.2023 - 11.2025</time>
+              <time data-i18n="job2Time">Apr 2023 - Jul 2024</time>
               <h3 data-i18n="job2Title">Second Line Support Engineer / Fenige S.A.</h3>
               <p data-i18n="job2Text">Technical analysis of payment systems, production and test environments, incidents, logs, API data and business inconsistencies.</p>
             </article>
             <article>
-              <time>2020 - 2023</time>
-              <h3 data-i18n="job3Title">IT and user support / PKO Bank Polski</h3>
+              <time data-i18n="job3Time">Oct 2021 - Apr 2023</time>
+              <h3 data-i18n="job3Title">Help Desk Support Specialist / PKO Bank Polski</h3>
               <p data-i18n="job3Text">Technical incident handling, access issues, banking application support and collaboration with IT teams and vendors.</p>
+            </article>
+            <article>
+              <time data-i18n="job4Time">Oct 2020 - Oct 2021</time>
+              <h3 data-i18n="job4Title">Customer Service Specialist / PKO Bank Polski</h3>
+              <p data-i18n="job4Text">Customer service in banking processes with hybrid work and direct contact with business users.</p>
             </article>
           </div>
         </section>
@@ -283,12 +288,12 @@
               </article>
               <article class="artifact-panel" id="testcase">
                 <p class="panel-label" data-i18n="syntheticSample">Synthetic sample</p>
-                <h3 data-i18n="testCaseTitle">Card authorization with 3DS challenge and successful capture</h3>
+                <h3 data-i18n="testCaseTitle">Refund API validation after successful payment transaction</h3>
                 <ol>
-                  <li data-i18n="testCase1">Create authorization request with valid merchant, amount and currency.</li>
-                  <li data-i18n="testCase2">Complete 3DS challenge with approved authentication result.</li>
-                  <li data-i18n="testCase3">Verify HTTP status, response body and transaction identifier.</li>
-                  <li data-i18n="testCase4">Confirm final state in PostgreSQL and transaction dashboard.</li>
+                  <li data-i18n="testCase1">Prepare a paid transaction with valid merchant, amount, currency and transaction identifier.</li>
+                  <li data-i18n="testCase2">Send refund request in Postman and validate authorization, HTTP status and response schema.</li>
+                  <li data-i18n="testCase3">Verify refund amount, original transaction reference and business status in response body.</li>
+                  <li data-i18n="testCase4">Confirm final status in PostgreSQL, correlate logs by transaction ID and prepare Jira evidence if the status is inconsistent.</li>
                 </ol>
               </article>
               <article class="artifact-panel" id="risk">
@@ -354,7 +359,7 @@
               <a class="button primary" href="mailto:piotr.obara.97@gmail.com">piotr.obara.97@gmail.com</a>
               <a class="button secondary" href="tel:+48602363240">+48 602 363 240</a>
               <a class="button ghost" href="https://www.linkedin.com/in/piotr-obara-aab063121/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a class="button ghost" data-cv-link href="/public/Piotr-Obara-CV-EN.pdf" download data-i18n="downloadCv">Download CV</a>
+              <a class="button ghost" data-cv-link href="/public/Piotr-Obara-CV-PL.pdf" download data-i18n="downloadCv">Download CV</a>
             </div>
           </div>
         </section>
