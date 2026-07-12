@@ -445,8 +445,7 @@ dd {
 .feature-card p,
 .case-card p,
 .timeline p,
-.contact-content p,
-.material-note p {
+.contact-content p {
   color: var(--muted);
   line-height: 1.65;
 }
@@ -459,8 +458,7 @@ dd {
 }
 
 .feature-card,
-.case-card,
-.material-note {
+.case-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--panel);
@@ -672,10 +670,6 @@ pre {
   color: #c7f7ed;
   overflow-x: auto;
   font: 500 0.86rem/1.7 "JetBrains Mono", monospace;
-}
-
-.material-note {
-  margin-top: 18px;
 }
 
 .api-band {
