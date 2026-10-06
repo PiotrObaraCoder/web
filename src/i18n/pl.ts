@@ -1,7 +1,7 @@
 export const FIGMA_URL = 'https://www.figma.com/design/yC0ZGGqHkUO7Y10Mz4iyMy';
 export const GITHUB_URL = 'https://github.com/PiotrObaraCoder';
 export const REPO_URL = 'https://github.com/PiotrObaraCoder/web';
-export const LINKEDIN_URL = 'https://www.linkedin.com/in/piotr-obara-aab063121/';
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/piotrobara/';
 export const EMAIL = 'piotr.obara.97@gmail.com';
 export const CV_URL = '/public/Piotr-Obara-CV-PL.pdf';
 

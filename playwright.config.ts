@@ -22,7 +22,8 @@ export default defineConfig({
   webServer: {
     command: `npm run build && npx astro preview --port ${PORT} --ignore-lock`,
     url: `http://localhost:${PORT}`,
-    reuseExistingServer: !process.env.CI,
+    // Always build and start a fresh server, so tests never run against a stale build
+    reuseExistingServer: false,
     timeout: 120_000
   }
 });

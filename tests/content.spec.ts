@@ -104,3 +104,15 @@ test.describe('Raport z testów', { tag: '@content' }, () => {
     );
   });
 });
+
+test('linki do LinkedIna wskazują aktualny profil (strona i API)', { tag: '@content' }, async ({ page, request }) => {
+  const profileUrl = 'https://www.linkedin.com/in/piotrobara/';
+  await page.goto('/');
+  const links = page.getByRole('link', { name: 'LinkedIn' });
+  await expect(links.first()).toBeVisible();
+  for (const href of await links.evaluateAll((els) => els.map((e) => e.getAttribute('href')))) {
+    expect(href).toBe(profileUrl);
+  }
+  const body = await (await request.get('/api/profile.json')).json();
+  expect(body.links.linkedin).toBe(profileUrl);
+});
