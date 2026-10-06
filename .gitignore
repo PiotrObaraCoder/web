@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+dist/
+.astro/
+test-results/
+playwright-report/
+blob-report/
+
+# Original photos (full resolution, kept local only) - optimized copies live in static/img/
+_originals/

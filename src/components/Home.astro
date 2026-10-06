@@ -1,0 +1,248 @@
+---
+import type { Dict } from '../i18n/pl';
+import { CV_URL, EMAIL, FIGMA_URL, GITHUB_URL, LINKEDIN_URL, REPO_URL } from '../i18n/pl';
+
+interface Props { t: Dict }
+const { t } = Astro.props;
+
+const resolve = (href: string | null) =>
+  href === 'figma' ? FIGMA_URL : href === 'repo' ? `${REPO_URL}/actions` : href === 'report' ? '/report/' : href;
+const isExternal = (href: string | null) => !!href && href.startsWith('http');
+---
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="label label-accent">{t.hero.label}</p>
+    <h1 id="hero-title">{t.hero.title}</h1>
+    <p class="lead">{t.hero.lead}</p>
+    <div class="actions">
+      <a class="button button-primary" href={CV_URL} download>{t.nav.cv}</a>
+      <a class="button button-secondary" href={LINKEDIN_URL} rel="noreferrer" target="_blank">LinkedIn</a>
+      <a class="button button-secondary" href={GITHUB_URL} rel="noreferrer" target="_blank">GitHub</a>
+    </div>
+    <ul class="chips quality-strip" aria-label={t.status.ciLabel} data-testid="quality-strip">
+      <li class="chip chip-claim" data-status="e2e" data-label={t.status.e2e} data-passing={t.status.passing} data-failing={t.status.failing}>{t.status.e2e}: {t.status.noData}</li>
+      <li class="chip chip-claim" data-status="a11y" data-label={t.status.a11y}>{t.status.a11y}: {t.status.noData}</li>
+      <li class="chip chip-claim" data-status="lastRun" data-label={t.status.lastRun}>{t.status.lastRun}: {t.status.noData}</li>
+    </ul>
+  </div>
+  <img class="portrait" src="/img/portrait-800.webp" srcset="/img/portrait-400.webp 400w, /img/portrait-800.webp 800w" sizes="(max-width: 980px) 320px, 380px" width="800" height="1000" alt={t.hero.portraitAlt} fetchpriority="high" />
+</section>
+
+<section class="wrap candidate" aria-labelledby="candidate-title">
+  <h2 id="candidate-title" class="visually-hidden">{t.candidate.label}</h2>
+  <dl class="candidate-grid" data-testid="candidate-card">
+    {t.candidate.items.map((i) => <div><dt class="label">{i.k}</dt><dd>{i.v}</dd></div>)}
+  </dl>
+</section>
+
+<section id="o-mnie" class="section wrap" aria-labelledby="about-title">
+  <div class="about-intro">
+    <div class="about-copy">
+      <p class="label label-accent">{t.about.label}</p>
+      <h2 id="about-title">{t.about.title}</h2>
+      <p class="lead">{t.about.lead}</p>
+      <p>{t.about.text}</p>
+    </div>
+    <div class="why">
+      <h3>{t.about.whyTitle}</h3>
+      <ol class="why-path">
+        {t.about.why.map((w) => <li><strong>{w.t}</strong><span>{w.d}</span></li>)}
+      </ol>
+    </div>
+  </div>
+  <h3 class="sub-title">{t.about.hobbyTitle}</h3>
+  <p class="muted narrow">{t.about.hobbyIntro}</p>
+  <div class="hobby-grid">
+    {t.about.hobbies.map((h, i) => (
+      <figure class:list={['hobby', { 'hobby-tall': i === 0 }]}>
+        <img src={`/img/${h.img}.webp`} width={h.w} height={h.h} loading="lazy" alt={h.alt} />
+        <figcaption>
+          <strong>{h.t}</strong>
+          <span>{h.d}</span>
+          {'credit' in h && h.credit && <small>{h.credit}</small>}
+        </figcaption>
+      </figure>
+    ))}
+    <article class="hobby hobby-finance">
+      <p class="label">IKE · IKZE</p>
+      <h4>{t.about.finance.t}</h4>
+      <p>{t.about.finance.d}</p>
+    </article>
+  </div>
+</section>
+
+<section class="section section-soft" aria-labelledby="domains-title">
+  <div class="wrap">
+    <p class="label label-accent">{t.domains.label}</p>
+    <h2 id="domains-title">{t.domains.title}</h2>
+    <p class="muted">{t.domains.intro}</p>
+    <ul class="domain-grid">
+      {t.domains.items.map((d) => (
+        <li class="card">
+          <span class:list={['chip', d.level === 'worked' ? 'chip-pass' : 'chip-info']}>{t.domains.levels[d.level as 'worked' | 'learning']}</span>
+          <h3>{d.t}</h3>
+          <p>{d.d}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section id="jak-testuje" class="section wrap" aria-labelledby="how-title">
+  <p class="label label-accent">{t.howITest.label}</p>
+  <h2 id="how-title">{t.howITest.title}</h2>
+  <ol class="how-grid">
+    {t.howITest.items.map((h) => (
+      <li class="card">
+        <h3>{h.t}</h3>
+        <p>{h.d}</p>
+        <a class="chip chip-pass evidence-link" href={resolve(h.href)} {...(isExternal(resolve(h.href)) ? { target: '_blank', rel: 'noreferrer' } : {})}>✓ {h.ev}</a>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<section id="doswiadczenie" class="section section-soft" aria-labelledby="exp-title">
+  <div class="wrap">
+    <p class="label label-accent">{t.experience.label}</p>
+    <h2 id="exp-title">{t.experience.title}</h2>
+    <ol class="timeline">
+      {t.experience.jobs.map((j) => (
+        <li class="job">
+          <p class="label">{j.time}</p>
+          <h3>{j.role}</h3>
+          <p class="muted">{j.org}</p>
+          <ul>{j.points.map((p) => <li>{p}</li>)}</ul>
+        </li>
+      ))}
+    </ol>
+    <article id="historia" class="story">
+      <p class="label label-accent">{t.experience.story.label}</p>
+      <h3>{t.experience.story.title}</h3>
+      <dl>
+        {t.experience.story.steps.map((s) => <div><dt>{s.k}</dt><dd>{s.v}</dd></div>)}
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section id="dowody" class="section wrap" aria-labelledby="evidence-title">
+  <p class="label label-accent">{t.evidence.label}</p>
+  <h2 id="evidence-title">{t.evidence.title}</h2>
+  <p class="muted narrow">{t.evidence.intro}</p>
+  <ul class="evidence-grid">
+    {t.evidence.items.map((e) => {
+      const href = resolve(e.href);
+      return (
+        <li class="card evidence-card">
+          <h3>{e.t}</h3>
+          <p>{e.d}</p>
+          {e.key === 'a11y' || e.key === 'e2e'
+            ? <span class="chip chip-claim" data-status={e.key} data-label={e.key === 'a11y' ? t.status.a11y : t.status.e2e} data-passing={t.status.passing} data-failing={t.status.failing}>{t.status.noData}</span>
+            : href
+              ? <span class="chip chip-info">▶ {e.key === 'figma' ? 'Figma' : 'JSON'}</span>
+              : <span class="chip chip-warn">{t.evidence.soon}</span>}
+          {e.key === 'e2e' && (
+            <ul class="report-links" data-report-links hidden>
+              <li><a data-report="summary" href="/report/test-summary.html" download="raport-z-testow-piotr-obara.html">{t.evidence.reports.summary}</a></li>
+              <li><a data-report="html" href="/report/">{t.evidence.reports.full}</a></li>
+              <li><a data-report="trace" href="https://trace.playwright.dev/" target="_blank" rel="noreferrer">{t.evidence.reports.trace}</a></li>
+            </ul>
+          )}
+          {href && <a class="card-link" href={href} {...(isExternal(href) ? { target: '_blank', rel: 'noreferrer' } : {})}>{t.evidence.open}<span class="visually-hidden">: {e.t}</span></a>}
+        </li>
+      );
+    })}
+  </ul>
+</section>
+
+<section class="section section-soft" aria-labelledby="growth-title">
+  <div class="wrap">
+    <p class="label label-accent">{t.growth.label}</p>
+    <h2 id="growth-title">{t.growth.title}</h2>
+    <ul class="growth">
+      {t.growth.items.map((g, i) => <li class="card"><span class:list={['chip', i === 0 ? 'chip-pass' : 'chip-info']}>{g.s}</span><strong>{g.t}</strong></li>)}
+    </ul>
+  </div>
+</section>
+
+<section id="kontakt" class="section contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <p class="label">{t.contact.label}</p>
+    <h2 id="contact-title">{t.contact.title}</h2>
+    <p class="lead">{t.contact.text}</p>
+    <dl class="contact-list">
+      <div><dt class="label">{t.contact.email}</dt><dd><a href={`mailto:${EMAIL}`}>{EMAIL}</a></dd></div>
+      <div>
+        <dt class="label">{t.contact.phone}</dt>
+        <dd data-testid="phone">
+          <button class="button button-on-dark" type="button" data-phone-reveal hidden>{t.contact.showPhone}</button>
+          <span data-phone-fallback>{t.contact.noJsPhone}</span>
+        </dd>
+      </div>
+    </dl>
+    <div class="actions">
+      <a class="button button-on-dark" href={CV_URL} download>{t.nav.cv}</a>
+      <a class="button button-outline-dark" href={LINKEDIN_URL} rel="noreferrer" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Phone number is not in the HTML: assembled on click to keep it away from scrapers.
+  const reveal = document.querySelector<HTMLButtonElement>('[data-phone-reveal]');
+  const fallback = document.querySelector<HTMLElement>('[data-phone-fallback]');
+  if (reveal && fallback) {
+    fallback.hidden = true;
+    reveal.hidden = false;
+    reveal.addEventListener('click', () => {
+      const digits = ['240', '363', '602', '48'].reverse();
+      const link = document.createElement('a');
+      link.href = `tel:+${digits.join('')}`;
+      link.textContent = `+${digits[0]} ${digits.slice(1).join(' ')}`;
+      reveal.replaceWith(link);
+      link.focus();
+    });
+  }
+
+  // Quality strip (acceptance criterion 5): real data from the latest CI run, never invented numbers.
+  type Status = {
+    e2e?: { passed: number; failed: number };
+    a11y?: { violations: number };
+    lastRun?: string;
+    report?: { html: string; summary: string; trace: string | null };
+  };
+  const lang = document.documentElement.lang;
+  const violations = (n: number) => (lang === 'pl' ? (n === 0 ? '0 naruszeń' : `${n} naruszeń`) : n === 1 ? '1 violation' : `${n} violations`);
+  const set = (el: HTMLElement, text: string, state: 'pass' | 'fail' | 'claim') => {
+    el.textContent = text;
+    el.classList.remove('chip-claim', 'chip-pass', 'chip-fail');
+    el.classList.add(`chip-${state}`);
+  };
+  fetch('/status.json', { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((s: Status) => {
+      const links = document.querySelector<HTMLElement>('[data-report-links]');
+      if (links && s.report) {
+        const trace = links.querySelector<HTMLAnchorElement>('[data-report="trace"]');
+        if (s.report.trace && trace) trace.href = `https://trace.playwright.dev/?trace=${encodeURIComponent(new URL(s.report.trace, location.origin).href)}`;
+        else trace?.parentElement?.remove();
+        links.hidden = false;
+      }
+      document.querySelectorAll<HTMLElement>('[data-status]').forEach((el) => {
+        const label = el.dataset.label ?? '';
+        const prefix = el.closest('.quality-strip') ? `${label}: ` : '';
+        if (el.dataset.status === 'e2e' && s.e2e) {
+          const ok = s.e2e.failed === 0;
+          set(el, `${ok ? '✓' : '✗'} ${prefix}${ok ? `${s.e2e.passed} ${el.dataset.passing}` : `${s.e2e.failed} ${el.dataset.failing}`}`, ok ? 'pass' : 'fail');
+        } else if (el.dataset.status === 'a11y' && s.a11y) {
+          const ok = s.a11y.violations === 0;
+          set(el, `${ok ? '✓' : '✗'} ${prefix}${violations(s.a11y.violations)}`, ok ? 'pass' : 'fail');
+        } else if (el.dataset.status === 'lastRun' && s.lastRun) {
+          const d = new Date(s.lastRun);
+          set(el, `${label}: ${d.toLocaleDateString(lang === 'pl' ? 'pl-PL' : 'en-GB')}`, 'claim');
+        }
+      });
+    })
+    .catch(() => { /* keep the server-rendered "no data" state */ });
+</script>
