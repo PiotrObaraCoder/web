@@ -1,0 +1,75 @@
+name: QA pipeline
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 3 * * *' # nightly regression, 05:00 Warsaw (summer time)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type check
+        run: npx astro check
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Playwright tests (E2E, WCAG, design spec, API)
+        id: tests
+        run: npx playwright test
+
+      - name: Publish status.json and test summary report
+        if: ${{ !cancelled() }}
+        run: |
+          node scripts/ci-status.mjs
+          cp -r playwright-report/. dist/report/
+
+      - name: Keep the full report as a run artifact
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      # Quality gate: the site is only deployed when every test passed
+      - name: Upload site for GitHub Pages
+        if: ${{ success() && github.ref == 'refs/heads/main' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: test
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

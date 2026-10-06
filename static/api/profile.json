@@ -1,0 +1,21 @@
+{
+  "name": "Piotr Obara",
+  "role": "Software tester / Test analyst",
+  "location": "Lublin, PL",
+  "availability": "immediately",
+  "contract": ["employment", "b2b"],
+  "workMode": ["remote", "hybrid", "on-site:Lublin"],
+  "languages": [{ "code": "pl", "level": "native" }, { "code": "en", "level": "B2" }],
+  "certifications": ["ISTQB CTFL 4.0"],
+  "domains": {
+    "worked": ["card payments", "e-commerce", "fraud & AML", "banking", "regulatory reporting"],
+    "learning": ["insurance"]
+  },
+  "skills": ["requirements analysis", "test design techniques", "risk-based testing", "REST API testing", "Postman", "SQL", "PostgreSQL", "UAT", "WCAG", "Playwright (learning)"],
+  "links": {
+    "site": "https://piotr-obara.pl/",
+    "linkedin": "https://www.linkedin.com/in/piotr-obara-aab063121/",
+    "github": "https://github.com/PiotrObaraCoder",
+    "cv": "https://piotr-obara.pl/public/Piotr-Obara-CV-PL.pdf"
+  }
+}
