@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap">
+<style>
+/* LinkedIn banner 1584x396. Colors = design/tokens.json (light mode names). Left ~460px stays calm: the profile photo overlaps it. */
+:root{--ink:#0E2235;--panel:#FFFFFF;--muted:#98A9BA;--red:#FF7AA8;--pass:#5FD09A;--line:#24384C}
+*{box-sizing:border-box;margin:0}
+body{width:1584px;height:396px;background:var(--ink);color:#E4EBF2;font-family:"IBM Plex Sans",sans-serif;position:relative;overflow:hidden}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.28}
+.fade{position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,rgba(14,34,53,.0) 38%,rgba(14,34,53,.0) 100%)}
+.content{position:absolute;left:520px;top:78px;width:1000px}
+.label{font:600 15px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+h1{margin-top:20px;white-space:nowrap;font-weight:700;font-size:50px;line-height:1.08;letter-spacing:-.01em;color:#fff}
+.sub{margin-top:14px;font-size:26px;line-height:1.35;color:var(--muted);font-weight:400}
+.chips{margin-top:26px;display:flex;gap:12px}
+.chip{font:600 16px/1 "IBM Plex Mono",monospace;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(18,34,50,.85);color:#E4EBF2;letter-spacing:.02em}
+.chip.p{color:var(--pass);border-color:rgba(95,208,154,.45)}
+.url{position:absolute;right:104px;bottom:46px;font:600 22px/1 "IBM Plex Mono",monospace;color:#fff}
+.url i{font-style:normal;color:var(--red)}
+.measure{position:absolute;left:520px;right:104px;bottom:26px;height:0;border-top:1px solid var(--red);opacity:.75}
+.measure:before,.measure:after{content:"";position:absolute;top:-5px;width:1px;height:10px;background:var(--red)}
+.measure:before{left:0}.measure:after{right:0}
+.pin{position:absolute;left:1512px;top:60px;width:30px;height:30px;border-radius:50%;background:var(--red);color:var(--ink);font:700 15px/30px "IBM Plex Mono",monospace;text-align:center}
+</style></head><body>
+<div class="grid"></div><div class="fade"></div>
+<div class="content">
+  <div class="label">Software Tester · Test Analyst</div>
+  <h1>I test systems where every detail matters.</h1>
+  <div class="sub">Banking · Payments · Insurance — requirements, API, SQL, accessibility</div>
+  <div class="chips"><span class="chip p">ISTQB CTFL 4.0</span><span class="chip">WCAG 2.2</span><span class="chip">Playwright</span><span class="chip">REST API · SQL</span></div>
+</div>
+<div class="measure"></div>
+<div class="url">piotr-obara.pl <i>→</i></div>
+</body></html>
