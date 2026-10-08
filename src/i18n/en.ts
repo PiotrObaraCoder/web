@@ -99,15 +99,16 @@ const en: Dict = {
     title: 'From customer service to quality assurance',
     jobs: [
       {
-        time: '07.2024 - present',
+        time: '07.2024 - 10.2026',
         role: 'Manual QA Engineer',
         org: 'Fenige S.A. · fintech, payments',
         points: [
           'The only tester in a team of three developers, in two-week Scrum sprints.',
-          'I test Visa and Mastercard chargebacks, fraud and AML rules, and CESOP reporting.',
-          'I test REST APIs and data flow: application → API → microservices → PostgreSQL.',
-          'I run UAT and choose the regression scope based on risk analysis.',
-          'I write tests and scripts in Postman, run with the Collection Runner.'
+          'Tested transaction monitoring rules required by Visa and Mastercard, plus fraud and AML rules.',
+          'Tested Visa and Mastercard chargebacks and CESOP reporting.',
+          'Tested REST APIs and data flow: application → API → microservices → PostgreSQL.',
+          'Ran UAT and chose the regression scope based on risk analysis.',
+          'Wrote tests and scripts in Postman, run with the Collection Runner.'
         ]
       },
       {

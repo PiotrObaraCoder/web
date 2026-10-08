@@ -116,3 +116,10 @@ test('linki do LinkedIna wskazują aktualny profil (strona i API)', { tag: '@con
   const body = await (await request.get('/api/profile.json')).json();
   expect(body.links.linkedin).toBe(profileUrl);
 });
+
+test('oś czasu: stanowisko w Fenige ma datę zakończenia, bez „obecnie”', { tag: '@content' }, async ({ page }) => {
+  await page.goto('/');
+  const jobs = page.locator('#doswiadczenie .job');
+  await expect(jobs.first()).toContainText('07.2024 - 10.2026');
+  await expect(page.locator('#doswiadczenie')).not.toContainText(/obecnie|present/i);
+});

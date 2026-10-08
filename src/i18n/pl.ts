@@ -104,15 +104,16 @@ const pl = {
     title: 'Od obsługi klienta do zapewniania jakości',
     jobs: [
       {
-        time: '07.2024 - obecnie',
+        time: '07.2024 - 10.2026',
         role: 'Manual QA Engineer',
         org: 'Fenige S.A. · fintech, płatności',
         points: [
           'Jedyny tester w zespole trzech programistów, w dwutygodniowych sprintach Scrum.',
-          'Testuję chargebacki Visa i Mastercard, reguły fraudowe i AML oraz raportowanie CESOP.',
-          'Testuję REST API i przepływ danych: aplikacja → API → mikroserwisy → PostgreSQL.',
-          'Prowadzę testy UAT i dobieram zakres regresji na podstawie analizy ryzyka.',
-          'Tworzę testy i skrypty w Postmanie uruchamiane przez Collection Runner.'
+          'Testowałem reguły monitoringu transakcji wymagane przez Visa i Mastercard oraz reguły fraudowe i AML.',
+          'Testowałem chargebacki Visa i Mastercard oraz raportowanie CESOP.',
+          'Testowałem REST API i przepływ danych: aplikacja → API → mikroserwisy → PostgreSQL.',
+          'Prowadziłem testy UAT i dobierałem zakres regresji na podstawie analizy ryzyka.',
+          'Tworzyłem testy i skrypty w Postmanie uruchamiane przez Collection Runner.'
         ]
       },
       {
